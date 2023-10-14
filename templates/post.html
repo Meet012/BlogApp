@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block style %}
+*{
+    margin : 0;
+    padding : 0;
+}
+#main{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+    background-color: lightblue;
+    height: 200px;
+    width: 90%;
+    margin : 10px;
+}
+#t1{
+    display: inline-block;
+    margin-top : 70px;
+    margin-left : 500px;
+}
+.i1{
+    overflow: hidden;
+}
+{% endblock style %}
+
+{% block body %}
+<div id="main">
+    <div class="item" id="i1">
+        <div id="t1">
+            <h1>Technical Blog`s</h1>
+        </div>
+    </div>
+        <div class="item i1">
+                <h2>{{posts.title}}</h2>
+                <h5>{{posts.created_at}}</h5>
+                <p>{{posts.dec}}</p>
+            
+        </div>
+</div>
+
+<div class="add">
+    <h3>
+        To create new blogs click here :- <a href="/add">Add New Blog</a>
+    </h3>
+</div>
+{% endblock body %}

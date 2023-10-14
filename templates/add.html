@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block style %}
+.cont{
+    display:flex;
+    flex-direction:column;
+    margin-left : 25%;
+    margin-right : 25%;
+    margin-top :15%;
+    position : relative;
+}
+{% endblock style %}
+
+{% block body %}
+<div><h1>Enter Your Blogs Here :-</h1></div>
+<div>
+    <form method="POST" class="cont">
+        {% csrf_token %}
+        <label for="title1">Enter the title :- </label>
+        <input type="text" id="title1" name="title1" placeholder="Title" />
+        <label for="dec">Enter the blog here :- </label>
+        <input type="text" id="dec" name="blogBody" placeholder="Blog"/>
+        <input type="submit" />
+    </form>
+</div>
+{% endblock body %}
